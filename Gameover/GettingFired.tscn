@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkinp87qkrs2h"]
+
+[ext_resource type="Script" uid="uid://dlk1epb2brxg" path="res://Gameover/getting_fired.gd" id="1_3ruho"]
+[ext_resource type="Texture2D" uid="uid://c7au7rat5oyic" path="res://boss1.png" id="1_xtoon"]
+[ext_resource type="Texture2D" uid="uid://b5s2dqvfqki1w" path="res://boss2.png" id="2_3ruho"]
+[ext_resource type="Texture2D" uid="uid://d1qqbwbeg03n0" path="res://render_blurred.png" id="4_47ji4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47ji4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xtoon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3ruho")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GettingFired" type="Node2D"]
+script = ExtResource("1_3ruho")
+
+[node name="Boss" type="AnimatedSprite2D" parent="."]
+position = Vector2(868, 368)
+scale = Vector2(0.806667, 0.806667)
+sprite_frames = SubResource("SpriteFrames_47ji4")
+
+[node name="Nonsense" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 160.0
+offset_top = 27.0
+offset_right = 723.0
+offset_bottom = 791.0
+theme_override_font_sizes/normal_font_size = 24
+
+[node name="RenderBlurred" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(581, 327)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("4_47ji4")

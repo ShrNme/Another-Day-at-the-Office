@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsejwnspb61e3"]
+
+[ext_resource type="Texture2D" uid="uid://bvgl4iyqbvt72" path="res://PrinterRepair/knife.png" id="1_8ylm3"]
+[ext_resource type="Script" uid="uid://bxceop6cbr61a" path="res://PrinterRepair/knife.gd" id="1_ka8ty"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka8ty"]
+radius = 25.5
+height = 132.35
+
+[node name="Knife" type="Area2D"]
+script = ExtResource("1_ka8ty")
+
+[node name="Knife" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ylm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+rotation = -0.750492
+shape = SubResource("CapsuleShape2D_ka8ty")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

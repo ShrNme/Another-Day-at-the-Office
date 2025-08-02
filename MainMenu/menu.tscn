@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://cuamurmq0sg33"]
+
+[ext_resource type="Script" uid="uid://dlyjfmsmc62ii" path="res://MainMenu/menu.gd" id="1_1re7i"]
+[ext_resource type="Texture2D" uid="uid://cyddpc32rnv6y" path="res://MainMenu/logo.png" id="1_d83ce"]
+[ext_resource type="Texture2D" uid="uid://d1qqbwbeg03n0" path="res://render_blurred.png" id="2_w07ws"]
+[ext_resource type="Texture2D" uid="uid://ckuacs2jfnthh" path="res://MainMenu/uwrZtTYA.png" id="3_fc22x"]
+[ext_resource type="FontFile" uid="uid://xo4f0nbotj6n" path="res://silkscreen-latin-400-normal.ttf" id="4_js0qh"]
+[ext_resource type="Texture2D" uid="uid://c7au7rat5oyic" path="res://boss1.png" id="5_3l3mq"]
+[ext_resource type="Texture2D" uid="uid://cwucos2rkbbg8" path="res://MainMenu/click.png" id="6_qujt1"]
+[ext_resource type="Texture2D" uid="uid://ds2qrjgy0kynr" path="res://MainMenu/click2.png" id="7_1re7i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1t3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qujt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1re7i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4s7k"]
+radius = 115.0
+height = 431.115
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_1re7i")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(335.445, 216.75)
+scale = Vector2(0.674775, 0.674775)
+texture = ExtResource("1_d83ce")
+
+[node name="RenderBlurred" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(581, 327)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("2_w07ws")
+
+[node name="UwrZtTya" type="Sprite2D" parent="."]
+position = Vector2(1030, 563)
+scale = Vector2(0.252778, 0.252778)
+texture = ExtResource("3_fc22x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 818.0
+offset_top = 32.0
+offset_right = 1147.0
+offset_bottom = 72.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Game by ShortenedName"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 837.0
+offset_top = 68.0
+offset_right = 1134.0
+offset_bottom = 108.0
+theme_override_fonts/normal_font = ExtResource("4_js0qh")
+theme_override_font_sizes/normal_font_size = 12
+text = "Silkscreen font from fontsource.org"
+
+[node name="Boss1" type="Sprite2D" parent="."]
+position = Vector2(1088, 333)
+rotation = -1.5708
+scale = Vector2(0.413333, 0.413333)
+texture = ExtResource("5_3l3mq")
+
+[node name="Start_button" type="Area2D" parent="."]
+
+[node name="button_spr" type="AnimatedSprite2D" parent="Start_button"]
+position = Vector2(745, 507)
+sprite_frames = SubResource("SpriteFrames_p1t3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_button"]
+position = Vector2(711, 509)
+rotation = 1.79594
+shape = SubResource("CapsuleShape2D_u4s7k")
+
+[connection signal="mouse_entered" from="Start_button" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="Start_button" to="." method="_on_start_button_mouse_exited"]

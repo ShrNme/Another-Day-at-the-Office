@@ -1,0 +1,172 @@
+[gd_scene load_steps=22 format=3 uid="uid://b846c8p5rrngm"]
+
+[ext_resource type="Script" uid="uid://bg0t2dd20ptrx" path="res://CorrectFormEntry/correct_form_entry.gd" id="1_5r8wp"]
+[ext_resource type="Texture2D" uid="uid://cfrueuejd3uiv" path="res://CorrectFormEntry/ID.png" id="1_ahnx0"]
+[ext_resource type="Texture2D" uid="uid://vfxey3vqtl4i" path="res://CorrectFormEntry/form.png" id="2_b8u8q"]
+[ext_resource type="Texture2D" uid="uid://cwy03fsgis620" path="res://CorrectFormEntry/name-correct.png" id="3_q320c"]
+[ext_resource type="Texture2D" uid="uid://fbp5qwsgxweo" path="res://CorrectFormEntry/name-wrong.png" id="4_5r8wp"]
+[ext_resource type="Texture2D" uid="uid://c3sc3sqfcymqf" path="res://CorrectFormEntry/dob-correct.png" id="6_o7h0r"]
+[ext_resource type="Texture2D" uid="uid://qwnxqkk8ajdq" path="res://CorrectFormEntry/dob-wrong1.png" id="7_jpghj"]
+[ext_resource type="Texture2D" uid="uid://c824yogywjf3i" path="res://CorrectFormEntry/dob-wrong2.png" id="8_1n6us"]
+[ext_resource type="Texture2D" uid="uid://db45m3vlx8f7w" path="res://CorrectFormEntry/sex-correct.png" id="9_1n6us"]
+[ext_resource type="Texture2D" uid="uid://de11vmyv347uv" path="res://CorrectFormEntry/sex-wrong.png" id="10_foj5h"]
+[ext_resource type="Texture2D" uid="uid://bj7jv8w2tkbd6" path="res://CorrectFormEntry/id-correct.png" id="11_ptwbw"]
+[ext_resource type="Texture2D" uid="uid://3ep2xebcxa6y" path="res://CorrectFormEntry/id-wrong1.png" id="12_s53pr"]
+[ext_resource type="Texture2D" uid="uid://l1requ8qtp2h" path="res://CorrectFormEntry/id-wrong2.png" id="13_nex1q"]
+[ext_resource type="Texture2D" uid="uid://s6yemboouu8a" path="res://CorrectFormEntry/submit_default.png" id="14_kutty"]
+[ext_resource type="Texture2D" uid="uid://bxvno7npfhkfe" path="res://CorrectFormEntry/submit_wrong.png" id="15_dbokm"]
+[ext_resource type="Texture2D" uid="uid://dag86x2od4kw7" path="res://CorrectFormEntry/submit_correct.png" id="16_2wbju"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfsv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q320c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5r8wp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_foj5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o7h0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jpghj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1n6us")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7xs5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1n6us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_foj5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kutty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ptwbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s53pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nex1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8v7h1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_kutty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dbokm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2wbju")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CorrectFormEntry" type="Node2D"]
+script = ExtResource("1_5r8wp")
+
+[node name="Id" type="Sprite2D" parent="."]
+position = Vector2(309, 350)
+scale = Vector2(0.652381, 0.652381)
+texture = ExtResource("1_ahnx0")
+
+[node name="Form" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(880, 335)
+texture = ExtResource("2_b8u8q")
+
+[node name="NameBtn" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 670.0
+offset_top = 132.0
+offset_right = 1109.0
+offset_bottom = 195.0
+
+[node name="Name" type="AnimatedSprite2D" parent="NameBtn"]
+position = Vector2(221, 30)
+sprite_frames = SubResource("SpriteFrames_sfsv2")
+
+[node name="dobBtn" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 700.0
+offset_top = 205.0
+offset_right = 1078.0
+offset_bottom = 281.0
+
+[node name="DOB" type="AnimatedSprite2D" parent="dobBtn"]
+position = Vector2(186, 41)
+sprite_frames = SubResource("SpriteFrames_foj5h")
+
+[node name="SexBtn" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 697.0
+offset_top = 293.0
+offset_right = 1098.0
+offset_bottom = 379.0
+
+[node name="Sex" type="AnimatedSprite2D" parent="SexBtn"]
+position = Vector2(201, 45)
+sprite_frames = SubResource("SpriteFrames_i7xs5")
+
+[node name="IDBtn" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 707.0
+offset_top = 407.0
+offset_right = 1059.0
+offset_bottom = 501.0
+
+[node name="ID" type="AnimatedSprite2D" parent="IDBtn"]
+position = Vector2(179, 50)
+sprite_frames = SubResource("SpriteFrames_kutty")
+
+[node name="SubmitBtn" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 884.0
+offset_top = 509.0
+offset_right = 1007.0
+offset_bottom = 573.0
+
+[node name="Submit" type="AnimatedSprite2D" parent="SubmitBtn"]
+position = Vector2(96, 32.0001)
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_8v7h1")
+
+[connection signal="pressed" from="NameBtn" to="." method="_on_name_btn_pressed"]
+[connection signal="pressed" from="dobBtn" to="." method="_on_dob_btn_pressed"]
+[connection signal="pressed" from="SexBtn" to="." method="_on_sex_btn_pressed"]
+[connection signal="pressed" from="IDBtn" to="." method="_on_id_btn_pressed"]
+[connection signal="pressed" from="SubmitBtn" to="." method="_on_submit_btn_pressed"]

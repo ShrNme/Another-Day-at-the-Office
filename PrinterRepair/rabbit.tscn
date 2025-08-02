@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://gfwxqrot4d43"]
+
+[ext_resource type="Script" uid="uid://bwu5jkr0d7qq0" path="res://PrinterRepair/rabbit.gd" id="1_3dvil"]
+[ext_resource type="Texture2D" uid="uid://e08c0uexitt0" path="res://PrinterRepair/rabbit_alive.png" id="2_3dvil"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka8ty"]
+size = Vector2(171, 380)
+
+[node name="Rabbit" type="Area2D"]
+script = ExtResource("1_3dvil")
+
+[node name="Rabbit" type="Sprite2D" parent="."]
+scale = Vector2(0.648789, 0.648789)
+texture = ExtResource("2_3dvil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ka8ty")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

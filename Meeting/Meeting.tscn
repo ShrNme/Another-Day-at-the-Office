@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://t45sxkft13op"]
+
+[ext_resource type="Texture2D" uid="uid://c7au7rat5oyic" path="res://boss1.png" id="1_5xhij"]
+[ext_resource type="Script" uid="uid://c61yn4uoyvawb" path="res://Meeting/meeting.gd" id="1_y0fm8"]
+[ext_resource type="Texture2D" uid="uid://b5s2dqvfqki1w" path="res://boss2.png" id="2_y0fm8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qae5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5xhij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y0fm8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Meeting" type="Node2D"]
+script = ExtResource("1_y0fm8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(846, 350.82)
+scale = Vector2(0.845, 0.845)
+sprite_frames = SubResource("SpriteFrames_qae5y")
+frame_progress = 0.135522
+
+[node name="ResponseBtn" type="Button" parent="."]
+offset_left = 312.0
+offset_top = 484.82
+offset_right = 537.0
+offset_bottom = 577.82
+text = "Sure"
+
+[node name="Nonsense" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 256.0
+offset_top = 112.82
+offset_right = 673.0
+offset_bottom = 408.82
+
+[node name="debugLabel" type="Label" parent="."]
+visible = false
+offset_left = 528.0
+offset_top = 539.0
+offset_right = 568.0
+offset_bottom = 562.0
+
+[connection signal="pressed" from="ResponseBtn" to="." method="_on_response_btn_pressed"]

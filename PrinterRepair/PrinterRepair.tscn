@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://k4y5jyd73t4s"]
+
+[ext_resource type="Texture2D" uid="uid://c8r0xtyrg1kh1" path="res://PrinterRepair/printer.png" id="1_8l7bg"]
+[ext_resource type="PackedScene" uid="uid://bsejwnspb61e3" path="res://PrinterRepair/knife.tscn" id="1_lbiix"]
+[ext_resource type="Texture2D" uid="uid://bdstk4s4enown" path="res://PrinterRepair/pentagram.png" id="2_ngpqr"]
+[ext_resource type="PackedScene" uid="uid://gfwxqrot4d43" path="res://PrinterRepair/rabbit.tscn" id="4_lqx0b"]
+[ext_resource type="Script" uid="uid://ds3tla2hjiwhi" path="res://PrinterRepair/pentagram.gd" id="4_qwcg0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqx0b"]
+radius = 129.19
+
+[node name="PrinterRepair" type="Node2D"]
+
+[node name="Knife" parent="." instance=ExtResource("1_lbiix")]
+z_index = 2
+position = Vector2(507, 107)
+
+[node name="Printer" type="Sprite2D" parent="."]
+position = Vector2(815, 290)
+scale = Vector2(0.486214, 0.486214)
+texture = ExtResource("1_8l7bg")
+
+[node name="Rabbit" parent="." instance=ExtResource("4_lqx0b")]
+position = Vector2(94, 433)
+
+[node name="Pentagram" type="Area2D" parent="."]
+z_index = -10
+script = ExtResource("4_qwcg0")
+
+[node name="Pentagram" type="Sprite2D" parent="Pentagram"]
+z_index = -10
+position = Vector2(371, 359)
+scale = Vector2(0.547085, 0.547085)
+texture = ExtResource("2_ngpqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pentagram"]
+position = Vector2(372, 362)
+shape = SubResource("CircleShape2D_lqx0b")
+
+[connection signal="area_entered" from="Rabbit" to="Knife" method="_on_rabbit_area_entered"]
+[connection signal="area_entered" from="Pentagram" to="Knife" method="_on_pentagram_area_entered"]
+[connection signal="area_entered" from="Pentagram" to="Pentagram" method="_on_area_entered"]
+[connection signal="area_exited" from="Pentagram" to="Pentagram" method="_on_area_exited"]

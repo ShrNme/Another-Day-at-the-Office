@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnfqjohy1w07s"]
+
+[ext_resource type="Script" uid="uid://fbceh5jdedn5" path="res://PhoneCalls/phone_calls.gd" id="1_r12kn"]
+[ext_resource type="Texture2D" uid="uid://djuyv2mak5nej" path="res://PhoneCalls/number.png" id="1_xw2qs"]
+[ext_resource type="Texture2D" uid="uid://qxkvooo5h8tv" path="res://PhoneCalls/phone.png" id="2_7dm3d"]
+[ext_resource type="FontFile" uid="uid://xo4f0nbotj6n" path="res://silkscreen-latin-400-normal.ttf" id="3_ivb7y"]
+
+[node name="PhoneCalls" type="Node2D"]
+script = ExtResource("1_r12kn")
+
+[node name="Number" type="Sprite2D" parent="."]
+position = Vector2(414, 451)
+scale = Vector2(0.46904, 0.46904)
+texture = ExtResource("1_xw2qs")
+
+[node name="Phone" type="Sprite2D" parent="."]
+position = Vector2(849, 382)
+scale = Vector2(0.731811, 0.731811)
+texture = ExtResource("2_7dm3d")
+
+[node name="CallingNumber" type="RichTextLabel" parent="."]
+offset_left = 672.0
+offset_top = 207.0
+offset_right = 901.0
+offset_bottom = 247.0
+theme_override_fonts/normal_font = ExtResource("3_ivb7y")
+
+[node name="0" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 760.0
+offset_top = 263.0
+offset_right = 827.0
+offset_bottom = 318.0
+
+[node name="Call" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 862.0
+offset_top = 268.0
+offset_right = 918.0
+offset_bottom = 318.0
+
+[node name="1" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 668.0
+offset_top = 327.0
+offset_right = 723.0
+offset_bottom = 383.0
+
+[node name="2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 762.0
+offset_top = 331.0
+offset_right = 819.0
+offset_bottom = 388.0
+
+[node name="3" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 853.0
+offset_top = 338.0
+offset_right = 904.0
+offset_bottom = 400.0
+
+[node name="4" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 672.0
+offset_top = 417.0
+offset_right = 731.0
+offset_bottom = 478.0
+
+[node name="5" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 763.0
+offset_top = 420.0
+offset_right = 817.0
+offset_bottom = 493.0
+
+[node name="6" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 849.0
+offset_top = 427.0
+offset_right = 903.0
+offset_bottom = 500.0
+
+[node name="7" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 671.0
+offset_top = 509.0
+offset_right = 719.0
+offset_bottom = 561.0
+
+[node name="8" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 754.0
+offset_top = 513.0
+offset_right = 806.0
+offset_bottom = 569.0
+
+[node name="9" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 849.0
+offset_top = 516.0
+offset_right = 888.0
+offset_bottom = 577.0
+
+[node name="Reset" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 669.0
+offset_top = 266.0
+offset_right = 738.0
+offset_bottom = 311.0
+
+[node name="Dialogue" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 308.0
+offset_top = 64.0
+offset_right = 619.0
+offset_bottom = 352.0
+theme_override_font_sizes/normal_font_size = 22
+
+[connection signal="pressed" from="0" to="." method="_on__pressed"]
+[connection signal="pressed" from="Call" to="." method="_on_call_pressed"]
+[connection signal="pressed" from="1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="6" to="." method="_on_6_pressed"]
+[connection signal="pressed" from="7" to="." method="_on_7_pressed"]
+[connection signal="pressed" from="8" to="." method="_on_8_pressed"]
+[connection signal="pressed" from="9" to="." method="_on_9_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx5rxnhf8ehxx"]
+
+[ext_resource type="Texture2D" uid="uid://bfhor0sfoahhb" path="res://PaperShredding/particle.png" id="1_35a60"]
+
+[node name="ShredParticle" type="CPUParticles2D"]
+emitting = false
+amount = 3
+texture = ExtResource("1_35a60")
+one_shot = true
+explosiveness = 0.8
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 102.21
+initial_velocity_max = 385.04

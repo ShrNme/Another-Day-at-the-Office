@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cko4nplull6uw"]
+
+[ext_resource type="Script" uid="uid://d16vfvbogocyi" path="res://workplace.gd" id="1_n4o62"]
+[ext_resource type="Texture2D" uid="uid://d1qqbwbeg03n0" path="res://render_blurred.png" id="2_2a0aw"]
+[ext_resource type="FontFile" uid="uid://xo4f0nbotj6n" path="res://silkscreen-latin-400-normal.ttf" id="2_xlm1k"]
+[ext_resource type="Texture2D" uid="uid://dnn2qc4ip4dw6" path="res://timeomatic.png" id="4_aqlwe"]
+[ext_resource type="Texture2D" uid="uid://7xu7pslbdmdv" path="res://stickynote.png" id="5_kjeef"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n4o62")
+
+[node name="Clock" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+offset_left = 951.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 87.0
+theme_override_fonts/normal_font = ExtResource("2_xlm1k")
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="TaskList" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 22.0
+offset_top = 4.0
+offset_right = 257.0
+offset_bottom = 677.0
+mouse_filter = 2
+text = "Today's Tasks:"
+scroll_active = false
+
+[node name="RenderBlurred" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(581, 327)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("2_2a0aw")
+
+[node name="Timeomatic" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1030, 43)
+texture = ExtResource("4_aqlwe")
+
+[node name="Stickynote" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(115, 97)
+texture = ExtResource("5_kjeef")
